@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lnag="kor">
+    <head>
+        <link rel = "stylesheet" href="./Main.css">
+        <meta charset="UTF-8">
+        <title>홈페이지</title>
+    </head>
+    <body>
+        <div id="page">
+            <header>
+                <h1><div id="logo">
+                    <a href="./Main.html">
+                        <img src="./이미지/logo.png" alt="logo" class="img" width="100px" height="80px">
+                    </a>
+                </div>
+            </h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">회사소개</a>
+                            <ul>
+                                <li><a href="#">연혁</a></li>
+                                <li><a href="#">비전</a></li>
+                                <li><a href="#">팀 소개</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">사업분야</a>
+                            <ul>
+                                <li><a href="#">내용1</a></li>
+                                <li><a href="#">내용2</a></li>
+                                <li><a href="#">내용용3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">제품소개</a>
+                            <ul>
+                                <li><a href="#">AR글래스</a></li>
+                                <li><a href="#">드라이기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">브랜드소개</a>
+                            <ul>
+                                <li><a href="#">Keheal</a></li>
+                                <li><a href="#">TCL</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">고객지원</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="slider-container">
+            <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="slides" id="slides">
+                <img class="slide" src="./이미지/ar glass.png" alt="slide1" onclick="redirectToSite(0)">
+                <img class="slide" src="./이미지/dryer.png" alt="slide2" onclick="redirectToSite(1)">
+                <img class="slide" src="./이미지/pocket tv.png" alt="slide3" onclick="redirectToSite(2)">
+            </div>
+            <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+        <footer>
+            <p>(주)스카이커머스     TEL : 031-000-0000</p>
+            <p>경기 화성시 동탄대로 677-12 효성ICT타워 620~621호</p>
+        </footer>
+
+        <script>
+            let index = 0;
+            function moveSlide(step) {
+                const slides = document.getElementById("slides");
+                const totalSlides = document.querySelectorAll(".slide").length;
+                index = (index + step + totalSlides) % totalSlides;
+                slides.style.transform = `translateX(-${index * 100}%)`;
+            }
+            setInterval(() => moveSlide(1), 3000);
+            
+            function redirectToSite(slideIndex) {
+                const urls = [
+                    "https://smartstore.naver.com/nxtwear/products/10856897743",
+                    "https://smartstore.naver.com/nxtwear/products/10828081633",
+                    "https://smartstore.naver.com/nxtwear/products/11466265248"
+                ];
+                window.location.href = urls[slideIndex];
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+a{text-decoration: none;}
+ul{list-style: none;}
+header{
+    width: 1900px;
+    height: 100px;
+    background-color: white;
+    position: relative;
+}
+
+#logo{
+    position: absolute;
+    top: 10px;
+    left: 250px; 
+}
+
+nav{
+    position: absolute;
+    bottom: 10px;
+    left: 400px;
+    font-size: 20px;
+}
+
+nav li{
+    display: inline;
+    margin-left: 100px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li {
+    position: relative;
+    margin-right: 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    color: black;
+}
+nav ul li a:hover {
+    background-color: #ddd;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    list-style: none;
+    z-index: 1000;
+}
+nav ul li ul li {
+    width: 150px;
+}
+nav ul li ul li a {
+    padding: 10px;
+    color: black;
+}
+nav ul li ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul {
+    top: 100%;
+    left: 0;
+}
+
+nav ul li ul:hover {
+    display: block;
+}
+
+header {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+footer{
+    background: #666;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+}
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    min-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    cursor: pointer;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
